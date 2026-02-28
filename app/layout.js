@@ -25,7 +25,10 @@ export default function RootLayout({ children }) {
       <body
         className={outfit.className}
       >
-        <header className="flex justify-end items-center p-4 gap-4 h-16">
+        <Provider>
+          {children}
+        </Provider>
+        <header className="flex justify-end items-start pt-4 pr-4 gap-4 h-16 w-min">
             {/* Show the sign-in and sign-up buttons when the user is signed out */}
             <SignedOut>
               <SignInButton />
@@ -36,13 +39,9 @@ export default function RootLayout({ children }) {
               </SignUpButton>
             </SignedOut>
             {/* Show the user button when the user is signed in */}
-            <SignedIn>
-              <UserButton />
+            <SignedIn >
             </SignedIn>
           </header>
-        <Provider>
-          {children}
-        </Provider>
       </body>
     </html>
     </ClerkProvider>
