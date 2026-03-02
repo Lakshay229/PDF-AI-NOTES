@@ -6,5 +6,12 @@ export default defineSchema({
         username:v.string(),
         email:v.string(),
         imgUrl:v.string(),
+    }),
+    pdfFiles:defineTable({
+        fileId:v.string(),
+        storageId:v.string(),
+        fileName:v.string(),
+        fileUrl:v.string(),
+        createdBy:v.string()
     })
 })
